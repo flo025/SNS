@@ -1,0 +1,32 @@
+.card-width {
+  max-width: 1000px;
+}
+
+.citation {
+  text-align: center ;
+  padding-top : 20px;
+  padding-bottom : 20px;
+}
+.example-card {
+  max-width: 800px;
+}
+
+.diviser{
+  margin-top: 40px;
+  margin-right: 100px;
+  margin-left: 100px;
+}
+
+.center {
+ text-align: center;
+}
+
+.margin-top {
+  margin-top: 20px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+

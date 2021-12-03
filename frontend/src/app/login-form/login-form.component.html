@@ -1,0 +1,22 @@
+<div>
+  <h1 mat-dialog-title matTooltip="Id : admin et Mdp : admin" >Connexion </h1>
+  <div mat-dialog-content class="input">
+
+    <mat-form-field appearance="fill">
+      <mat-label>Identifiant : </mat-label>
+      <input matInput [(ngModel)]="id">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Mot de Passe</mat-label>
+      <input matInput [(ngModel)]="mdp" [type]="hide ? 'password' : 'text'">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+
+  </div>
+  <div mat-dialog-actions>
+    <button mat-raised-button color="accent" mat-dialog-close >Annuler</button>
+    <button mat-raised-button color="primary" (click)="login()">Se Connecter</button>
+  </div>
+</div>

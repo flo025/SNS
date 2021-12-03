@@ -1,0 +1,28 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+}
+
+.margin-right{
+  margin-right: 10px;
+}
+
+.margin-left{
+  margin-left: 10px;
+}
+
+.navside-bg{
+  background: #3f51b5;
+
+}
+
+.menu_text_color {
+  color: white;
+}
+
+
+

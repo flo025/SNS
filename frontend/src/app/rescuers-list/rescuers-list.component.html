@@ -1,0 +1,31 @@
+<form [formGroup]="formGroup">
+  <mat-form-field appearance="fill">
+    <mat-label>Rechercher un sauveteur</mat-label>
+    <input matInput [formControl]="filterControl" type="text">
+    <button *ngIf="filterControl.value !== ''" matSuffix mat-icon-button aria-label="Clear"
+            (click)="filterControl.setValue('')">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <div class="card-container">
+    <mat-card *ngFor="let rescuer of rescuers" class="rescuer-card">
+      <mat-card-header style="justify-content: center">
+        <mat-card-title>{{rescuer.firstname | titlecase}} {{rescuer.lastname | uppercase}}</mat-card-title>
+        <mat-card-subtitle>Sauvetages : {{rescuer.nbRescues}}</mat-card-subtitle>
+        <mat-card-subtitle>Personnes secourus : {{rescuer.nbTotalRescues}}</mat-card-subtitle>
+      </mat-card-header>
+      <!--img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"-->
+      <mat-card-content>
+        <mat-list role="list">
+          <mat-list-item role="listitem" *ngFor="let test of rescuer.rescuerRescue">Item 1</mat-list-item>
+        </mat-list>
+      </mat-card-content>
+      <mat-card-actions>
+        <a mat-button [href]="rescuer.page" target="_blank">Voir ce sauveteur</a>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <mat-paginator #paginator [pageSizeOptions]="[10, 25, 50, 100]"></mat-paginator>
+</form>

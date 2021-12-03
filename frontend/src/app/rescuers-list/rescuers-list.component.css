@@ -1,0 +1,11 @@
+.rescuer-card {
+  margin: 0.5%;
+  width: 16%;
+  text-align: center;
+}
+
+.card-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
