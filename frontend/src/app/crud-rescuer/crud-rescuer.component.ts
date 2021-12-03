@@ -9,7 +9,17 @@ export class CrudRescuerComponent implements OnInit {
 
   constructor() { }
 
+  nom: string="";
+  prenom: string ="";
+  url: string="";
+
+
   ngOnInit(): void {
+  }
+
+  add(){
+
+
   }
 
 }

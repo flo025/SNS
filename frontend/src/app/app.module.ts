@@ -15,17 +15,19 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {ShipsListComponent} from './ships-list/ships-list.component';
 import {SavedPeopleListComponent} from './saved-people-list/saved-people-list.component';
-import {getFrenchPaginatorIntl} from "./utils/french-paginator-intl";
 import {MatPaginatorIntl} from "@angular/material/paginator";
 import {WhoAreWeComponent} from './who-are-we/who-are-we.component';
-import { NewsPaperComponent } from './news-paper/news-paper.component';
-import { LoginFormComponent } from './login-form/login-form.component';
-import { CrudRescuerComponent } from './crud-rescuer/crud-rescuer.component';
+import {NewsPaperComponent} from './news-paper/news-paper.component';
+import {LoginFormComponent} from './login-form/login-form.component';
+import {CrudRescuerComponent} from './crud-rescuer/crud-rescuer.component';
+import {CrudRescuesComponent} from './crud-rescues/crud-rescues.component';
+
+
+//Others
 import {authService} from "./auth/auth.service";
-import { CrudRescuesComponent } from './crud-rescues/crud-rescues.component';
-
-
-
+import {getFrenchPaginatorIntl} from "./utils/french-paginator-intl";
+import {registerLocaleData} from "@angular/common";
+registerLocaleData(localeFr, 'fr');
 
 const routes: Routes = [
   {path: '', component: AcceuilComponent},
@@ -37,7 +39,8 @@ const routes: Routes = [
   {path: 'news-paper', component: NewsPaperComponent},
 
   {path: 'crud-rescuer', component: CrudRescuerComponent, canActivate: [authService]},
-  { path: '**', redirectTo: '' }
+  {path: 'crud-rescues', component: CrudRescuesComponent, canActivate: [authService]},
+  {path: '**', redirectTo: ''}
 ]
 
 @NgModule({
@@ -53,7 +56,6 @@ const routes: Routes = [
     LoginFormComponent,
     CrudRescuerComponent,
     CrudRescuesComponent,
-
   ],
   imports: [
     HttpClientModule,

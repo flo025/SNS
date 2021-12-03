@@ -14,6 +14,14 @@ export class AppComponent {
 
   constructor(public dialog: MatDialog) {}
 
+  ngOnInit(): void {
+
+    if(localStorage.getItem('key') == "true"){
+      this.loged = true;
+    }
+
+  }
+
   toggleSidebar() {
     this.opened = !this.opened;
   }

@@ -9,6 +9,10 @@ export class CrudRescuesComponent implements OnInit {
 
   constructor() { }
 
+  titre: string="";
+  date = Date.now();
+  people_saved: number=0;
+
   ngOnInit(): void {
   }
 

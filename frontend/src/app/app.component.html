@@ -25,18 +25,13 @@
         </mat-list-item>
 
         <mat-list-item class="menu_text_color" *ngIf=(loged)>
-          <mat-icon aria-hidden="false" aria-label="Example home icon">favorite</mat-icon>
+          <mat-icon aria-hidden="false" aria-label="Example home icon">face</mat-icon>
           <a routerLink="/crud-rescuer" mat-button>CRUD Sauveteurs</a>
         </mat-list-item>
 
         <mat-list-item class="menu_text_color" *ngIf=(loged)>
-          <mat-icon aria-hidden="false" aria-label="Example home icon">face</mat-icon>
-          <a routerLink="/crud-saved-people" mat-button>CRUD Personnes Sauvées</a>
-        </mat-list-item>
-
-        <mat-list-item class="menu_text_color" *ngIf=(loged)>
           <mat-icon aria-hidden="false" aria-label="Example home icon">directions_boat</mat-icon>
-          <a routerLink="/crud-ship" mat-button>CRUD Batteaux</a>
+          <a routerLink="/crud-rescues" mat-button>CRUD Batteaux</a>
         </mat-list-item>
 
 
