@@ -1,0 +1,25 @@
+<?xml version='1.0' ?>
+<Daten>    
+     <QUELLE>
+          <RETTUNG ID = "RETTUNG">
+               <rettung>rescue</rettung>
+               <verketten>CONCAT</verketten>
+               <vorname>firstname</vorname>
+               <platz>" "</platz>
+               <nachname>lastname</nachname>
+               <mogen>LIKE</mogen>
+               <filtre>filter</filtre>
+          </RETTUNG>
+          <RETTERIN.ER>
+               <rettet>rescuer</rettet>
+               <verketten>CONCAT</verketten>
+               <vorname>firstname</vorname>
+               <platz>" "</platz>
+               <nachname>lastname</nachname>
+               <mogen>LIKE</mogen>
+               <filtre>filter</filtre>
+               <Nummerrettet>nbRescues</Nummerrettet>
+               <rettet>rescues</rettet>
+          </RETTERIN.ER>
+     </QUELLE>
+</Daten>
