@@ -17,6 +17,11 @@ export class RescuerController {
       .then(([results, total]) => ({
         results: results.map((rescuer) => {
           rescuer.page = 'https://sauveteurdudunkerquois.fr/' + rescuer.page;
+          rescuer.nbRescues = rescuer.rescuerRescue.length;
+          rescuer.nbTotalRescues = rescuer.rescuerRescue.reduce(
+            (total, { rescue }) => total + rescue.nbRescues,
+            0,
+          );
           return rescuer;
         }),
         total,

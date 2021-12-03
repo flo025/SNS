@@ -16,6 +16,9 @@ pipeline {
         MYSQL_ENV = 'production'
         NODE_ENV  = 'production'
       }
+      when {
+        branch = "master"
+      }
       steps {
         sh "docker-compose -f docker-compose.yml up --build -d"
       }
