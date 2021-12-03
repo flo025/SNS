@@ -14,7 +14,10 @@ export class RescuerService {
   constructor(
     @InjectRepository(Rescuer)
     private readonly rescuerRepository: Repository<Rescuer>,
-  ) {}
+  ) {
+
+
+  }
 
   findAll(query: IQuery): Promise<[Rescuer[], number]> {
     console.log(query);
@@ -23,6 +26,7 @@ export class RescuerService {
       .where('CONCAT(rescuer.firstname, " ", rescuer.lastname) LIKE :filter', {
         filter: `%${query.filter}%`,
       })
+      .loadRelationCountAndMap('rescuer.nbRescues', 'rescuer.rescues')
       .skip(query.skip)
       .take(query.take);
 

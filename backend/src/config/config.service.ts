@@ -33,8 +33,6 @@ export class ConfigService {
 
   constructor() {
     this.envConfig = process.env;
-    console.log(this.envConfig['MYSQl_ENV']);
-
     if (!process.env.ENV_LOAD) {
       const DEFAULT_ENV_FILE = path.resolve(__dirname, `../../.env`);
       Object.assign(
@@ -54,7 +52,6 @@ export class ConfigService {
   }
 
   get(key: envNames): string {
-    console.log(key, this.envConfig[key]);
     return this.envConfig[key];
   }
 }
