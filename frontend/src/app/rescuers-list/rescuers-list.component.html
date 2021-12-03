@@ -18,7 +18,11 @@
       <!--img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"-->
       <mat-card-content>
         <mat-list role="list">
-          <mat-list-item role="listitem" *ngFor="let test of rescuer.rescuerRescue">Item 1</mat-list-item>
+          <mat-list-item role="listitem" *ngFor="let rescuerRescue of rescuer.rescuerRescue" style="border:'solid'">
+            <h2 matLine>{{rescuerRescue.rescue.shipName}}</h2>
+            <p matLine>Date: {{rescuerRescue.rescue.date | date:'shortDate'}}</p>
+            <p matLine>Personnes secourus: {{rescuerRescue.rescue.nbRescues}}</p>
+          </mat-list-item>
         </mat-list>
       </mat-card-content>
       <mat-card-actions>
