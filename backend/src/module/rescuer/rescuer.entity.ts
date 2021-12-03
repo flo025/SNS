@@ -1,5 +1,5 @@
-import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
-import { Rescue } from '../rescue/rescue.entity';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { RescuerRescue } from '../rescuer_rescue.entity';
 
 @Entity()
 export class Rescuer {
@@ -15,6 +15,9 @@ export class Rescuer {
   @Column({ nullable: false })
   lastname: string;
 
-  @OneToMany(() => Rescue, (rescue) => rescue.rescuers)
-  rescues: Rescue[];
+  nbRescues: number;
+  nbTotalRescues: number;
+
+  @OneToMany(() => RescuerRescue, (rescuerRescue) => rescuerRescue.rescuer)
+  rescuerRescue: RescuerRescue[];
 }

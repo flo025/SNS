@@ -1,5 +1,5 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
-import { Rescuer } from '../rescuer/rescuer.entity';
+import { RescuerRescue } from '../rescuer_rescue.entity';
 
 @Entity()
 export class Rescue {
@@ -9,9 +9,12 @@ export class Rescue {
   @Column({ nullable: false })
   shipName: string;
 
-  @Column({ nullable: false })
+  @Column({ nullable: false, type: 'date' })
   date: Date;
 
-  @OneToMany(() => Rescuer, (rescuer) => rescuer.rescues)
-  rescuers: Rescuer[];
+  @Column({ nullable: false })
+  nbRescues: number;
+
+  @OneToMany(() => RescuerRescue, (rescuerRescue) => rescuerRescue.rescue)
+  rescuerRescue: RescuerRescue[];
 }
