@@ -17,7 +17,7 @@ pipeline {
         NODE_ENV  = 'production'
       }
       when {
-        branch = "master"
+        branch "master"
       }
       steps {
         sh "docker-compose -f docker-compose.yml up --build -d"
