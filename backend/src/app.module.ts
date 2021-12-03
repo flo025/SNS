@@ -5,6 +5,7 @@ import { ConfigModule } from './config/config.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigService } from './config/config.service';
 import { RescuerModule } from './module/rescuer/rescuer.module';
+import { RescueModule } from './module/rescue/rescue.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { RescuerModule } from './module/rescuer/rescuer.module';
       inject: [ConfigService],
     }),
     RescuerModule,
+    RescueModule,
   ],
   controllers: [AppController],
   providers: [AppService],
