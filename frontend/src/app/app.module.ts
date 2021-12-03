@@ -1,7 +1,8 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {LOCALE_ID, NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
 import {AppComponent} from './app.component';
+import localeFr from '@angular/common/locales/fr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {MaterialModules} from '../material.module';
@@ -65,7 +66,11 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {provide: LOCALE_ID, useValue: "fr"},
+    {provide: MatPaginatorIntl, useValue: getFrenchPaginatorIntl()},
+    authService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
